@@ -53,7 +53,7 @@ app.post('/chat', async (req, res) => {
     const respuesta = await configuration.chat.completions.create({
       model: 'gpt-3.5-turbo',
       messages: [{ role: 'user', content: pregunta }],
-      MAX_TOKENS: 100
+      max_tokens: 100
     });
     res.json({ respuesta: respuesta.choices[0].message.content });
   } catch (error) {
