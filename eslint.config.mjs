@@ -1,15 +1,8 @@
-
-import pkg from 'eslint';
 import js from "@eslint/js";
 import globals from "globals";
-import pluginReact from "eslint-plugin-react";
-// Change the import from "eslint/config" to "eslint"
-//import { defineConfig } from "eslint";
-
-const { defineConfig } = pkg;
-
+import { defineConfig } from "eslint/config";
 
 export default defineConfig([
-  { files: ["**/*.{js,mjs,cjs,jsx}"], plugins: { js }, extends: ["js/recommended"], languageOptions: { globals: globals.node } },
-  pluginReact.configs.flat.recommended,
+  { files: ["**/*.{js,mjs,cjs}"], plugins: { js }, extends: ["js/recommended"], languageOptions: { globals: globals.browser } },
+  { files: ["**/*.js"], languageOptions: { sourceType: "commonjs" } },
 ]);
