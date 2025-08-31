@@ -32,6 +32,8 @@ jobs:
   cd_job:
     needs: ci_job
     runs-on: ubuntu-latest
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}    
     steps:
       - name: Deploy to Render
         run: curl -X POST ${{ secrets.RENDER_DEPLOY_HOOK_URL }}
