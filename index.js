@@ -1,6 +1,7 @@
 // crea un servidor express basico      
 // carge las variables desde el archivo .env
 
+const unusedVar = 42;
 
 const express = require('express');
 // cargue las variables desde el archivo .env
