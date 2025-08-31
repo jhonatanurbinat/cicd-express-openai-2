@@ -16,9 +16,13 @@ app.get('/', (req, res) => {
   res.send('¡Hola Mundo!');
 });
 
-app.listen(port, () => {
-  console.log(`Servidor escuchando en http://localhost:${port}`);
-});
+if (require.main === module) {
+  app.listen(port, () => {
+    console.log(`Servidor escuchando en http://localhost:${port}`);
+  });
+}
+
+module.exports = app;
 
 // crea un endpoint get en /status que devuelva un json con {"status": "ok" , timestamp: new Date()}
 app.get('/status', (req, res) => {
