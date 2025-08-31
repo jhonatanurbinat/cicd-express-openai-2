@@ -50,7 +50,7 @@ app.post('/chat', async (req, res) => {
   }
 
   try {
-    const respuesta = await openai.chat.completions.create({
+    const respuesta = await configuration.chat.completions.create({
       model: 'gpt-3.5-turbo',
       messages: [{ role: 'user', content: pregunta }],
       MAX_TOKENS: 100
